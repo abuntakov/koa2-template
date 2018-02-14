@@ -4,7 +4,7 @@
   "private": true,
   "keywords": [],
   "scripts": {
-    "jschecker": "./pre-commit/js-checker",
+    "jschecker": "bash ./pre-commit/js-checker",
     "start": "NODE_PATH=\"$(pwd)/src\" NODE_ENV=development nodemon src/server"
   },
   "pre-commit": [
