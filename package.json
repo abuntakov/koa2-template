@@ -5,12 +5,13 @@
   "keywords": [],
   "scripts": {
     "jschecker": "./pre-commit/js-checker",
-    "start": "NODE_ENV=development nodemon src/server"
+    "start": "NODE_PATH=`pwd` NODE_ENV=development nodemon src/server"
   },
   "pre-commit": [
     "jschecker"
   ],
   "devDependencies": {
+    "babel-eslint": "^8.2.1",
     "eslint": "^4.10.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-import-resolver-babel-module": "^3.0.0",

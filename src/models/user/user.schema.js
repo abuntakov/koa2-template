@@ -36,12 +36,12 @@ const schema = {
   },
 
   displayName: {
-    type:     String,
+    type: String,
   },
 
   role: {
-    type:     String,
-    enum:     roles,
+    type: String,
+    enum: roles,
     required: true,
   },
 

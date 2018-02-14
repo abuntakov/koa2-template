@@ -1,8 +1,8 @@
 const bcrypt = require('bcryptjs')
 const mongoose = require('../../libs/mongoose')
 const {
-	createEntity,
-	readEntity,
+  createEntity,
+  readEntity,
 } = require('../crud')
 
 const AccountModule = require('./account.schema')
@@ -12,20 +12,20 @@ const AccountSchema = AccountModule.schema
 const saltRound = 10
 
 function encryptPassword(password) {
-	return bcrypt.hashSync(password, bcrypt.genSaltSync(saltRound))
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(saltRound))
 }
 
 function checkPassword(password) {
-	return bcrypt.compareSync(password, this.password)
+  return bcrypt.compareSync(password, this.password)
 }
 
 function preSaveEntity(next) {
-	const account = this
+  const account = this
 
-	if (account.password) {
-		account.password = encryptPassword(account.password)
-	}
-	next()
+  if (account.password) {
+    account.password = encryptPassword(account.password)
+  }
+  next()
 }
 
 AccountSchema.methods.encryptPassword = encryptPassword

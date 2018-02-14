@@ -3,31 +3,31 @@ const mongoose = require('mongoose')
 const i18n = require('../../libs/i18n')
 
 const schema = {
-	username: {
-		type: String,
+  username: {
+    type: String,
     required: [
       true,
       i18n.__('error.validation.required.username'),
     ],
-	},
+  },
 
-	password: {
-		type: String,
+  password: {
+    type: String,
     required: [
       true,
       i18n.__('error.validation.required.password'),
     ],
-	},
+  },
 
-	userId: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref:  'User',
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
 
-		required: [
-			true,
-			i18n.__('error.validation.required.userId'),
-		],
-	},
+    required: [
+      true,
+      i18n.__('error.validation.required.userId'),
+    ],
+  },
 }
 
 const schemaKeys = _.keys(schema)
@@ -36,8 +36,8 @@ const defaultInsertableFields = _.difference(schemaKeys)([])
 const defaultUpdatableFields = []
 
 module.exports = {
-	defaultInsertableFields,
-	defaultUpdatableFields,
+  defaultInsertableFields,
+  defaultUpdatableFields,
 
-	schema: new mongoose.Schema(schema, { timestamps: true }),
+  schema: new mongoose.Schema(schema, { timestamps: true }),
 }

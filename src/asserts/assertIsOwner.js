@@ -1,11 +1,11 @@
 const _ = require('lodash/fp')
 
 const assertIsOwner = (userId, error) => (obj) => {
-	if (_.toString(obj.userId) !== userId) {
-		throw error
-	}
+  if (_.toString(obj.userId) !== userId) {
+    throw error
+  }
 
-	return obj
+  return obj
 }
 
 module.exports = assertIsOwner
