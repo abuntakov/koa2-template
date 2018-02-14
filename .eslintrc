@@ -7,7 +7,12 @@
   },
   "settings": {
     "import/resolver": {
-      "babel-module": {}
+      "babel-module": {},
+      "node": {
+        "moduleDirectory": [
+          "node_modules", "src"
+        ]
+      }
     }
   },
   "rules": {
